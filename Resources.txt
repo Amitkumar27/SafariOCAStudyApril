@@ -15,6 +15,8 @@ https://www.safaribooksonline.com/library/view/oca-java-se/9780134427201/
  - Java Ranch (javaranch.com) Discussion forum with heavy emphasis on Java certification topics. Many resources, including lists of resouces, and helpful people and useful discussions.
 
  - API, Tutorials. Remember these are key source documents for the folks writing the questions.
+https://docs.oracle.com/javase/8/docs/
+https://docs.oracle.com/javase/8/docs/api
 https://docs.oracle.com/javase/tutorial/
 
  - Commercial study material (to which I contributed sample questions) available from Kaplan (among others, Java Ranch maintains a list of resources, including sample question pools) http://www.transcender.com/
