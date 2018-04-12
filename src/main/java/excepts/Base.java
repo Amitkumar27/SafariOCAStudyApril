@@ -14,9 +14,9 @@ class Base {
 class Sub extends Base {
 //                        vvvvvvvvvvvvvv Not allowed because base
 //  method does NOT throw this...
-  public void doStuff() throws MyException { // l2
-    if (Math.random() > 0.5) throw new MyException(); // l1
-  }
+//  public void doStuff() throws MyException { // l2
+//    if (Math.random() > 0.5) throw new MyException(); // l1
+//  }
   // no surprises!!! Liskov substitution rules must not be less accessible
   // than parent
 //  protected void doTwo() {}

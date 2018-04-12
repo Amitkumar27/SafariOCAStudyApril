@@ -277,8 +277,8 @@ d) comp fails at l3
 class Base {
   private int value;
   public Base() {
-    this(3);
-    super();
+    this(3); // l1
+    super(); // l3
   }
 
   public Base(int x) { // l2
@@ -292,8 +292,35 @@ b) comp fails at l1
 c) comp fails at l2
 d) comp fails at l3
 
+---------------------------------------------
+    final StringBuilder sb = new StringBuilder("Hello");
+    sb.append(" world!");
+    System.out.println(sb);
+
+    /*
+    What is the result?
+    A) Compilation fails
+    B) Hello
+    C) Hello world!
+    D) Exception at runtime
+     */
+  }
 
 
+---------------------------------------------
+
+    final String s = new String("Hello");
+    s.concat(" world!");
+    System.out.println(s);
+
+    /*
+    What is the result?
+    A) Compilation fails
+    B) Hello
+    C) Hello world!
+    D) Exception at runtime
+     */
+  }
 
 
 
