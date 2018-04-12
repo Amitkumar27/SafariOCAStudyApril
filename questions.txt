@@ -92,4 +92,167 @@ c) runtime error
      */
   }
 
+------------------------------------
+  class Base {
+    void doBaseStuff() {
+      System.out.println("doBaseStuff");
+    }
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() {
+      System.out.println("doSubStuff");
+    }
+    void doOtherStuff() {
+      System.out.println("doOtherStuff");
+    }
+  }
+
+  public void q15() {
+    Base b = new Sub();
+    b.doOtherStuff();
+    /*
+    What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+     */
+  }
+
+--------------------------------------------------
+
+    Base b = new Sub();
+    ((Sub)b).doOtherStuff();
+    /*
+    What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+     */
+  }
+
+----------------------------------------------------
+
+
+    Base b = new Sub();
+    ((Runnable)b).run();
+    /*
+    What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+     */
+  }
+
+----------------------------------------------------
+
+1. short s1 = 3;
+2. short s2 = 128;
+3. short s3 = s1 + s2;
+4. s.o.p(s3)
+
+what is the result
+a) 131
+b) Compilation error at line 2
+c) Compilation error at line 3
+d) Runtime error
+e) "strange result"
+
+------------------------------------------------------
+package x.y;
+class Q22 {
+    public int getValue() {return 1;}
+    /*
+    which of these methods may individually be added
+    to a subclass of this class?
+    A) public int getValue(int x) {return 1;}
+    B) public String getValue() {return "Hello";}
+    C) public String getValue(int x) {return "Hello";}
+    D) A), B), and C)
+    E) A), and C)
+    */
+  }
+
+A) is a different method (overload) because arg list is different OK!
+B) is "same" method (same name and arg list, therefore override) but return is
+   surprising!!! NOT OK
+C) is a different method (overload) because arg list is different, return is not
+   a problem OK!
+
+------------------------------------------------------
+
+1. public void doStuff() {
+2.   if (Math.random() > 0.5) throw new RuntimeException();
+3. }
+
+what happens:
+
+a) compiler error at line 1
+b) compiler error at line 2
+c) class cast exeption at line 2
+d) runs normally, or not, randomly...
+
+------------------------------------------------------
+
+class Base {
+  public void doStuff() { // l3
+    if (Math.random() > 0.5) throw new RuntimeException();
+  }
+}
+class Sub extends Base {
+  public void doStuff() throws Exception { // l2
+    if (Math.random() > 0.5) throw new IOException(); // l1
+  }
+}
+
+/* Imagine!....
+  Base b = new Sub();
+  b.doStuff(); // compiler believes this is OK; 
+               // no checked exception, therefore no handling required!
+               // THIS WOULD BREAK the checked exception checking
+               // It is a "surprise" in an overriding method	
+*/
+
+
+what happens
+a) "works"
+b) fails at l1
+c) fails at l2
+d) fails at l3
+
+what happens:
+
+------------------------------------------------------
+
+class Base {
+  public void doStuff() { // l3
+  }
+}
+class Sub extends Base { // l1
+  void doStuff() { // l2
+  }
+}
+/* Imagine!....
+  Base b = new Sub();
+  b.doStuff(); // compiler believes this is OK;
+  // NOT allowed to make overriding methods LESS accessible than
+  // their "parent" method
+*/
+
+
+
+what happens:
+a) compiles OK
+b) comp fails at l1
+c) comp fails at l2
+d) comp fails at l3
+
+
+
 
