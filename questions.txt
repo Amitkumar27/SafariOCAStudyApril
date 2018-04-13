@@ -430,4 +430,64 @@ B) false, false
 C) true, false
 D) false, true
 
+-----------------------------------------------
+  public void q11A(int x) {
+    x = x + 1;
+  }
+  public void q11() {
+    int x = 99;
+    q11A(x);
+    System.out.println(x);
+    /* What is the result?
+    A) 99
+    B) 100
+    C) An error
+     */
+  }
+------------------------------------------------
+  public void q12A(StringBuilder x) {
+    x.append(" world");
+  }
+
+  public void q12() {
+    StringBuilder x = new StringBuilder("Hello");
+    q12A(x);
+    System.out.println(x);
+    /* What is the result?
+    A) Hello
+    B) Hello world
+    C)  world
+    D) An error
+     */
+  }
+
+-------------------------------------------------
+
+  public void q10() {
+    int x;
+    System.out.println(x);
+    /*
+    What is the result?
+    A) 0
+    B) Random number printed
+    C) Exception at runtime
+    D) Compilation fails
+     */
+  }
+
+-------------------------------------------------
+class Q10 {
+  int x;
+}
+  public void q10() {
+    Q10 x = new Q10();
+    System.out.println(x.x);
+    /*
+    What is the result?
+    A) 0
+    B) Random number printed
+    C) Exception at runtime
+    D) Compilation fails
+     */
+  }
 
