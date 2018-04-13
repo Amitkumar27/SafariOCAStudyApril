@@ -322,6 +322,38 @@ d) comp fails at l3
      */
   }
 
+---------------------------------------------
+
+    final String s = new String("Hello");
+    s = s.concat(" world!");
+    System.out.println(s);
+
+    /*
+    What is the result?
+    A) Compilation fails
+    B) Hello
+    C) Hello world!
+    D) Exception at runtime
+     */
+  }
+
+---------------------------------------------
+
+    final int x = 99;
+    x++;
+    System.out.println(x);
+
+    /*
+    What is the result?
+    A) Compilation fails
+    B) 99
+    C) 100
+    D) Exception at runtime
+     */
+  }
+
+
+
 
 
 

@@ -19,7 +19,7 @@ public class Ex1 {
     /*s = */s.concat(" world!");
     System.out.println(s);
 
-    
+
 
   }
 }
