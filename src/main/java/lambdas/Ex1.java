@@ -126,6 +126,10 @@ public class Ex1 {
 //        }
 //    ));
 
+//    showAll(getStringsByCriterion(ls,
+//        s -> s.length() > 6
+//    ));
+
     // "complicated" lambdas are legal, but probably poor style..???
 //    showAll(getStringsByCriterion(ls,
 //        s -> {
@@ -147,5 +151,9 @@ public class Ex1 {
     showAll(filter(ls, s -> s.length() < 7));
     showAll(filter(dates, d -> d.isAfter(today)));
     showAll(filter(dates, (LocalDate d) -> d.isBefore(today)));
+    Predicate<LocalDate> pld = d -> d.isAfter(today);
+    pld.test(today);
+    boolean isAfterToday =
+        ((Predicate<LocalDate>)(d -> d.isAfter(today))).test(today);
   }
 }
