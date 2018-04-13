@@ -397,5 +397,37 @@ B) Hello, and Bonjour are eligible for GC
 C) Hello is eligible
 D) Bonjour is eligible
 
+-----------------------------------------------
+
+public class RunTimeDemo {
+   public static BiFunction<Integer, Integer, Integer> userPlus = (t, a) -> t + a;
+   public static BiFunction<Integer, Integer, Integer> userMultiply = (t, a) -> t * a;
+   public static void main(String[] args) {
+      BiFunction runTimeBiFunction = userPlus;
+      System.out.println(runTimeBiFunction.equals(userMultiply));
+      System.out.println(runTimeBiFunction.equals(userPlus));
+      System.out.println(runTimeBiFunction == userMultiply);
+      System.out.println(runTimeBiFunction == userPlus);
+   }
+}
+
+What is the output:
+A) true, true, true, true
+B) true, false, true, false
+C) false, true, false, true
+D) false, false, true, true
+E) false, false, false, false
+
+-----------------------------------------------
+
+StringBuilder sb1 = new StringBuilder("Hello");
+StringBuilder sb2 = new StringBuilder("Hello");
+sout(sb1 == sb2)
+sout(sb1.equals(sb2))
+
+A) true, true
+B) false, false
+C) true, false
+D) false, true
 
 
